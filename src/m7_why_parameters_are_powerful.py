@@ -64,7 +64,7 @@ def draw_circles():
     window.close_on_mouse_click()
 
 # ----------------------------------------------------------------------
-# TODO: 2.
+# Done: 2.
 #   First, RUN this program.  You will see that draw_circles draws
 #   concentric circles whose radii vary by 10.
 #
@@ -95,19 +95,25 @@ def draw_circles():
 
 
 def test_better_draw_circles():
+    print()
+    print('--------------------------------------------------')
+    print('Testing  draw_circles:  See graphics window')
+    print('--------------------------------------------------')
+    better_draw_circles(5)
 
-    # Test 1
-    answer = (3)
-    expected = 0.13416
-    print('Test 4 expected:', expected)
-    print('       actual:  ', answer)
 
-
-def better_draw_circles(r, k):
+def better_draw_circles(k):
+    window = rg.RoseWindow(1600, 900)
+    center = rg.Point(800, 450)
+    for n in range(21):
+        circle = rg.Circle(center, n * k)
+        circle.attach_to(window)
+        window.render(0.05)
+    window.close_on_mouse_click()
 
 
 # ----------------------------------------------------------------------
-# TODO: 3.
+# Done: 3.
 #   In the previous exercise, you made a MORE POWERFUL version
 #   of draw_circles by introducing a PARAMETER for the amount by
 #   which the radii of the concentric circles increase.
@@ -134,6 +140,24 @@ def better_draw_circles(r, k):
 #   In testing your even_better_draw_circles function,
 #   can you make some fun pictures?
 # ----------------------------------------------------------------------
+def test_even_better_draw_circles():
+    print()
+    print('--------------------------------------------------')
+    print('Testing  draw_circles:  See graphics window')
+    print('--------------------------------------------------')
+    center = rg.Point(800, 450)
+    even_better_draw_circles(5, 60, center, 'red', 20)
+
+
+def even_better_draw_circles(a, b, c, d, e):
+    window = rg.RoseWindow(1600, 900)
+    center = c
+    for n in range(b + 1):
+        circle = rg.Circle(center, n * a)
+        circle.outline_color = d
+        circle.attach_to(window)
+        window.render(1 / e)
+    window.close_on_mouse_click()
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
