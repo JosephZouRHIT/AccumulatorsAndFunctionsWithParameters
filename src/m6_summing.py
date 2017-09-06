@@ -29,6 +29,24 @@ def test_sum_cosines():
     print('Testing the   sum_cosines   function:')
     print('--------------------------------------------------')
 
+    # Test 1
+    answer = sum_cosines(3)
+    expected = 0.13416
+    print('Test 4 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 2
+    answer = sum_cosines(1)
+    expected = 0.54030
+    print('Test 4 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 1
+    answer = sum_cosines(2)
+    expected =
+    print('Test 4 expected:', expected)
+    print('       actual:  ', answer)
+
 
 def sum_cosines(n):
     """
